@@ -1,0 +1,29 @@
+<h1>Please enter your credentials below:
+</h1><br>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %><br>
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %> 
+  </div>
+  <%= submit_tag 'Log in', :name => 'login' %>
+
+  <%= submit_tag 'Add user'%>
+
+
+ 
+ 
+<% end %>
+
+ 
